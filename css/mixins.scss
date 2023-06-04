@@ -1,61 +1,25 @@
-
-
-
-/* Media Queries */ Not necessarily correct, edit these at will 
-$media_queries : (
-    'xxl': "screen (max-width: $xxl)",
-    'xl' : "screen and (min-width: $xl) and (max-width: ($xxl - 1))",
-    'lg' : "screen and (min-width: $lg) and (max-width: ($xl - 1))",
-    'md' : "screen and (min-width: $md) and (max-width: ($lg - 1))",
-    'sm' : "screen and (min-width: $sm) and (max-width: ($md - 1))",
-);
-
-@mixin for_breakpoint($breakpoints) {
-    $conditions : ();
-    @each $breakpoint in $breakpoints {
-        // If the key exists in the map
-        $conditions: append(
-            $conditions,
-            #{inspect(map-get($media_queries, $breakpoint))},
-            comma
-        );
+@mixin _xxl(){
+    @media(max-height: $xxl){
+        @content
     }
-
-    @media #{$conditions} {
-        @content;
-    }
-
 }
-
-
-
-// @mixin xxl{
-//     @media screen and (min-width: $xxl){
-//         @content
-//     }
-// }
-// @mixin xl{
-//     @media screen and (min-width: $xl) and (max-width: ($xxl - 1)){
-//         @content
-//     }
-// }
-// .xl($content){
-//     @media screen and (min-width: $xl) and (max-width: ($xxl - 1)){
-//         $content();
-//     }
-// }
-// .lg($content){
-//     @media screen and (min-width: $lg) and (max-width: ($xl - 1)){
-//         $content();
-//     }
-// }
-// .md($content){
-//     @media screen and (min-width: $md) and (max-width: ($lg - 1)){
-//         $content();
-//     }
-// }
-// .sm($content)$
-//     @media screen and (min-width: $sm) and (max-width: ($md - 1)){
-//         $content();
-//     }
-// }
+@mixin _xl(){
+    @media(min-height: $xl) and (max-height: ($xxl - 1)){
+        @content
+    }
+}
+@mixin _lg(){
+    @media(min-height: $lg) and (max-height: ($xl - 1)){
+        @content
+    }
+}
+@mixin _md(){
+    @media(min-height: $md) and (max-height: ($lg - 1)){
+        @content
+    }
+}
+@mixin _sm(){
+    @media(max-height: ($md - 1)){
+        @content
+    }
+}

@@ -4,26 +4,51 @@
 html{
 	font-size: $font_base;
 }
-body{
-	
-}
-
 .header{
-	&__wrap{
-		@include xxl{
-			background: #a00;
-		}
-	}
-	&__top{
-		// height: 80px;
+	&-top{
 		width: 100%;
 		background: #22262a;
-		display: flex;
 		padding-bottom: 15px;
+		font-family: $font_Montserrat;
+
+		&__wrap{
+			display: flex;
+			justify-content: space-between;
+		}
+		&__help{
+			font-size: 1.4rem;
+			padding-left: 12px;
+			margin: 10px 0 0;
+		}
+		&__phone-email{
+			flex-grow: 1;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			color: $white;
+			& i{
+				color: $yellow;
+			}
+			& div{
+				padding: 10px 20px 0;
+			}
+		}
+		&__weather{
+			color: $yellow;
+			font-size: 1.5rem;
+			font-weight: 500;
+			& p{
+				padding: 10px 20px 0;
+			}
+		}
 	}
-	&__help{
-		font-size: 1.4rem;
-	}
+	&-center{
+		
+		&__wrap{
+			display: flex;
+			justify-content: space-between;
+		}
+	}	
 }
 .help{
 	display: inline-flex;
@@ -31,9 +56,7 @@ body{
 	width: 200px;
 	&__item{
 		position: relative;
-		&_active{
 
-		}
 		&:nth-child(1n+2)::before{
 			background: $yellow;
 			content: '';
@@ -45,18 +68,34 @@ body{
 			left: -17px;
 		}
 	}
-	&__link{
-		text-decoration: none;
-		color: $white;
-		font-family: $font_Montserrat;
-		font-weight: 500;
-		font-size: 1.5rem;
+}
+.link{
+	text-decoration: none;
+	color: $white;
+	font-family: $font_Montserrat;
+	font-weight: 500;
+	font-size: 1.5rem;
 
-		
+	&:hover{
+		color: $yellow;
+		transition: 0.2s;
+	}
+}
+.wrap{
+	margin: 0 auto;
+	@include _xxl{
+		width: 1200px;
+	}
+	@include _xl{
+		width: 1200px;
+	}
+	@include _lg{
+		width: 960px;
+	}
+	@include _md{
+		width: 720px;
+	}
+	@include _sm{
 
-		&:hover{
-			color: $yellow;
-			transition: 0.2s;
-		}
 	}
 }
