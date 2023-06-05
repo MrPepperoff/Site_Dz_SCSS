@@ -1,25 +1,25 @@
-@mixin _xxl(){
-    @media(max-height: $xxl){
-        @content
-    }
-}
-@mixin _xl(){
-    @media(min-height: $xl) and (max-height: ($xxl - 1)){
-        @content
-    }
-}
-@mixin _lg(){
-    @media(min-height: $lg) and (max-height: ($xl - 1)){
+@mixin _sm(){
+    @media(min-width: $sm) and (max-width:($md - 1)){
         @content
     }
 }
 @mixin _md(){
-    @media(min-height: $md) and (max-height: ($lg - 1)){
+    @media(min-width: $md) and (max-width: ($lg - 1)){
         @content
     }
 }
-@mixin _sm(){
-    @media(max-height: ($md - 1)){
+@mixin _lg(){
+    @media(min-width: $lg) and (max-width: ($xl - 1)){
+        @content
+    }
+}
+@mixin _xl(){
+    @media(min-width: $xl) and (max-width: ($xxl - 1)){
+        @content
+    }
+}
+@mixin _xxl(){
+    @media(min-width: $xxl){
         @content
     }
 }

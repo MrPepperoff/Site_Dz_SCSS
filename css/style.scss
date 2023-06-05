@@ -8,37 +8,132 @@ html{
 	&-top{
 		width: 100%;
 		background: #22262a;
-		padding-bottom: 15px;
+		padding: 0 15px;
 		font-family: $font_Montserrat;
+		box-sizing: border-box;
 
 		&__wrap{
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			@include _sm{
+				justify-content: space-between;
+			}
+			@include _md{
+				justify-content: space-between;
+			}
+			@include _lg{
+				justify-content: space-between;
+			}
+			@include _xl{
+				justify-content: space-between;
+			}					
+			@include _xxl{
+				justify-content: space-between;
+			}
 		}
 		&__help{
 			font-size: 1.4rem;
-			padding-left: 12px;
-			margin: 10px 0 0;
+			padding: 15px 0;
+			margin: 0 auto;
+			order: 1;
+
+			@include _sm{}
+			@include _md{
+				margin: 0;
+			}
+			@include _lg{
+				margin: 0;
+			}
+			@include _xl{
+				margin: 0;
+			}			
+			@include _xxl{
+				margin: 0;
+			}
 		}
 		&__phone-email{
 			flex-grow: 1;
 			height: 100%;
+			width: 100%;
 			display: flex;
 			justify-content: center;
 			color: $white;
+			padding: 15px 0;
+			order: 3;
 			& i{
 				color: $yellow;
 			}
-			& div{
-				padding: 10px 20px 0;
+			& div a{
+				padding: 0 5px;
+				font-size: 1.3rem;
+
+				@include _lg{
+					padding: 0 20px;
+					font-size: 1.5rem;
+				}
+				@include _xl{
+					width: auto;
+					padding: 0 20px;
+					font-size: 1.5rem;
+				}			
+				@include _xxl{
+					width: auto;
+					padding: 0 20px;
+					font-size: 1.5rem;
+				}
+			}
+			@include _sm{
+				order: 3;
+			}
+			@include _md{
+				order: 3;
+			}
+			@include _lg{
+				order: 3;
+			}
+			@include _xl{
+				width: auto;
+				order: 2;
+			}			
+			@include _xxl{
+				width: auto;
+				order: 2;
 			}
 		}
 		&__weather{
 			color: $yellow;
 			font-size: 1.5rem;
 			font-weight: 500;
-			& p{
-				padding: 10px 20px 0;
+			order: 2;
+			padding: 15px 0;
+			width: 100%;
+			text-align: center;
+
+			@include _sm{
+				font-size: 1.5rem;
+				width: 100%;
+				text-align: center;
+				order: 2;
+			}
+			@include _md{
+				width: auto;
+				text-align: right;
+				order: 2;
+			}
+			@include _lg{
+				width: auto;
+				text-align: right;
+				order: 2;
+			}
+			@include _xl{
+				width: auto;
+				order: 3;
+			}					
+			@include _xxl{
+				width: auto;
+				order: 3;
 			}
 		}
 	}
@@ -87,7 +182,7 @@ html{
 		width: 1200px;
 	}
 	@include _xl{
-		width: 1200px;
+		width: 1140px;
 	}
 	@include _lg{
 		width: 960px;
