@@ -138,15 +138,52 @@ html{
 		}
 	}
 	&-center{
-		
+		border-bottom: 1px solid $gray;
 		&__wrap{
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
+			margin: 20px auto !important;
 		}
-		&__info a{
-			color: #000;
+		&__info{
+			
+			& a{
+				color: #000;
+				line-height: 4.5rem;
+				width: 4.5rem;
+				height: 4.5rem;
+				& i{
+					font-size: 2rem;
+				}
+			}
 		}
-	}	
+	}
+	&-bottom{
+		&__wrap{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 0 0 0;
+		}
+		&__social{
+			
+			& a{
+				color: #000;
+				line-height: 4.5rem;
+				background: $gray2;
+				width: 4.5rem;
+				height: 4.5rem;
+
+				& i{
+					font-size: 1.5rem;
+				}
+			}
+		}
+		&__menu{
+
+		}
+
+	}
 }
 .help{
 	display: inline-flex;
@@ -166,6 +203,75 @@ html{
 			left: -17px;
 		}
 	}
+}
+.logo{
+	width: 274px;
+}
+.banner{
+	position: relative;
+	&__text{
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		margin-top: -20px;
+		font-size: 1.5rem;
+		font-family: $font_Montserrat;
+		font-weight: 600;
+		color: #000;
+		& span{
+			line-height: 3rem;
+			font-size: 2rem;
+			font-weight: 700;
+		}
+	}
+}
+.info{
+	display: inline-flex;
+	width: 274px;
+	justify-content: space-between;
+
+	&__item{
+		text-align: center;
+	}
+	&__link{
+		display: block;
+		height: 100%;
+		width: 100%;
+		border-radius: 30%;
+		background: $gray;
+		transition: 1s;
+
+		&:hover{
+			background: $yellow;
+			transition: 1s;
+		}
+	}
+}
+.menu{
+	display: inline-flex;
+	// width: 274px;
+	justify-content: space-between;
+
+	&__item{
+		text-align: center;
+		&_active a{
+			color: $yellow;
+		}
+	}
+	&__link{
+		font-family: $font_Montserrat;
+		font-size: 1.6rem;
+		font-weight: 500;
+		display: block;
+		height: 100%;
+		width: 100%;
+		color: #000;
+		text-decoration: none;
+		&:hover{
+			color: $yellow;
+			transition: 0.5s;
+		}
+	}	
 }
 .link{
 	text-decoration: none;
