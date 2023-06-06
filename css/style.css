@@ -124,6 +124,8 @@ html {
 .header-center__wrap {
   display: flex;
   justify-content: space-between; }
+.header-center__info a {
+  color: #000; }
 
 .help {
   display: inline-flex;

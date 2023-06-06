@@ -143,6 +143,9 @@ html{
 			display: flex;
 			justify-content: space-between;
 		}
+		&__info a{
+			color: #000;
+		}
 	}	
 }
 .help{
