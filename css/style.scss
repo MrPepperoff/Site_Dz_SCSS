@@ -254,23 +254,33 @@ html{
 	&__item{
 		text-align: center;
 		position: relative;
-		&_active > span a{
+		&_active > span a,
+		&:hover > span a{
 			color: $yellow;
+			transition: 0.5s;
+		}
+		&_active > span::before,
+		&:hover > span::before{
+			color: $yellow;
+			transition: 0.5s;
 		}
 		span{
 			position: relative;
 			&::before{
-				font-family: 'fa-solid';
+				font-family: FontAwesome;
 				content: '\f107';
+				width: 10px;
+				height: 10px;
+				line-height: 10px;
 				position: absolute;
-				top: 0;
-				right: 0;
+				top: 5px;
+				right: -10px;
 			}
 			& + ul{
 				display: none;
 			}
 			&:hover + ul{
-				display: block;
+				display: none;
 			}
 		}
 		
@@ -292,8 +302,6 @@ html{
 	}
 	&__menu2{
 		position: absolute;
-
-
 	}	
 }
 .menu2{
