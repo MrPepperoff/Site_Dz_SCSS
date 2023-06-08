@@ -5,13 +5,13 @@ html{
 	font-size: $font_base;
 }
 .header{
+	margin-bottom: 20px;
 	&-top{
 		width: 100%;
 		background: #22262a;
 		padding: 0 15px;
 		font-family: $font_Montserrat;
 		box-sizing: border-box;
-
 		&__wrap{
 			display: flex;
 			justify-content: center;
@@ -179,10 +179,81 @@ html{
 				}
 			}
 		}
-		&__menu{
+	}
+}
+.main{
+	&__first{
+		background: $gray3;
+		&-wrap{
+			display: flex;
+			justify-content: space-between;
+		}
+		&-little{
+			&-item{
+				position: relative;
+				margin: 10px 0;
+				background: #000;
+				border-radius: 10px;
+				height: 110px;
+				&:hover img{
+					opacity: 0.2;
+					transition: 0.2s;
+					}
+			}
+			&-link{
+				& div{
+					position: absolute;
+					display: flex;
+					justify-content: space-between;
+					width: 190px;
+					font-family: $font_Montserrat;
+					font-weight: bold;
+					top: 50%;
+					left: 30px;
+					color: $white;
+					opacity: 0;
+					font-size: 2.4rem;
+					margin-top: -1.2rem;
+					& i{
+						text-align: right;
+						background: $yellow;
+						margin-top: -1.1rem;
+						padding: 1rem;
+						border-radius: 50%;
+						box-sizing: border-box;
+					}
+				}
+				&:hover div{
+					opacity: 1;
+				}
+			}
+		}
+		&-hero{
 
 		}
+		&__comment{
 
+		}
+	}
+}
+.comment{
+	flex-grow: 1;
+	&__top{
+		display: flex;
+		font-family: $font_Montserrat;
+		padding: 5px;
+		font-size: 1.6rem;
+		align-items: center;
+		& h3{
+			background: $yellow-b;
+			padding: 10px 30px;
+			box-sizing: border-box;
+			border-radius: 10px;
+			margin-right: 40px;
+		}
+		& span{
+			color: $gray4;
+		}
 	}
 }
 .help{
@@ -254,36 +325,33 @@ html{
 	&__item{
 		text-align: center;
 		position: relative;
-		&_active > span a,
-		&:hover > span a{
+		&::before{
+			font-family: FontAwesome;
+			content: '\f107';
+			width: 10px;
+			height: 10px;
+			line-height: 10px;
+			position: absolute;
+			top: 5px;
+			right: -10px;
+		}
+		& ul{
+			display: none;
+		}
+		&:hover ul{
+			display: block;
+		}
+
+		&_active span > a,
+		&:hover > a{
 			color: $yellow;
 			transition: 0.5s;
 		}
-		&_active > span::before,
-		&:hover > span::before{
+		&_active::before,
+		&:hover::before{
 			color: $yellow;
 			transition: 0.5s;
-		}
-		span{
-			position: relative;
-			&::before{
-				font-family: FontAwesome;
-				content: '\f107';
-				width: 10px;
-				height: 10px;
-				line-height: 10px;
-				position: absolute;
-				top: 5px;
-				right: -10px;
-			}
-			& + ul{
-				display: none;
-			}
-			&:hover + ul{
-				display: none;
-			}
-		}
-		
+		}		
 	}
 	&__link{
 		font-family: $font_Montserrat;
@@ -300,13 +368,13 @@ html{
 			transition: 0.5s;
 		}
 	}
-	&__menu2{
+	&__submenu{
 		position: absolute;
 	}	
 }
-.menu2{
+.submenu{
 	border: 1px solid #000;
-	margin-top: -10px;
+	// margin-top: -10px;
 	&__item{
 		min-width: 135px;
 		box-sizing: border-box;
