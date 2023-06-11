@@ -155,7 +155,7 @@
 		text-align: center;
 		position: relative;
 		&::before{
-			font-family: FontAwesome;
+			font-family: $font_icon;
 			content: '\f107';
 			width: 10px;
 			height: 10px;
@@ -253,17 +253,20 @@
 }
 .author{
 	display: block !important;
-	width: 275px;
+	&__wrap{
+		border: 1px solid $gray;
+		width: 235px;
+		padding: 40px;
+		border-radius: 20px;
+	}
 	&__wrapimg{
 		width: 100%;
-		// background: #a00;
 		margin-bottom: 10px;
 		&-img{
 			display: block;
 			margin: 0 auto;
 			padding: 10px;
 			border-radius: 50%;
-			// background: #0f0;
 			border: 1px solid $gray;
 		}
 	}
@@ -289,6 +292,11 @@
 			line-height: 1.5;
 		}
 	}
+	&__banner{
+		padding: 10px 7.5px 0;
+		text-align: center;
+		margin: 0 auto;
+	}
 	&__ditalics{
 		font-size: 1.5rem;
 		text-align: center;
@@ -301,15 +309,22 @@
 	}
 	&__social{
 		width: 235px;
+		margin-bottom: 80px;
 	}
 	&__view{
 		background: $gray2;
 		color: #333;
-		padding: 10px;
+		padding: 15px 30px;
 		border-radius: 10px;
+		&::after{
+			font-family: $font_icon;
+			content: '\f061';
+			margin-left: 15px;
+		}
 		&:hover{
 			color: #333;
 			background: $yellow;
+
 		}
 	}
 }
@@ -587,7 +602,6 @@ body{
 			&-item{
 				display: flex;
 				flex-wrap: wrap;
-				// justify-content: space-around;
 			}
 			&-subitem{
 				padding: 0 15px;
