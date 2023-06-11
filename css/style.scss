@@ -1,8 +1,324 @@
 @import "var.scss";
 @import "mixins.scss";
+.comment{
+	width: 375px;
+	padding: 0 15px;
+	line-height: 1.5;
+	&:nth-child(1n+2){
+		margin-top: 45px;
+	}
+	&__top{
+		display: flex;
+		font-size: 1.6rem;
+		align-items: center;
+		margin: 0 0 20px 0;
+		& h6{
+			background: $yellow-b;
+			padding: 10px 30px;
+			box-sizing: border-box;
+			border-radius: 10px;
+			margin-right: 30px;
+			& a{
+				color: #000;
+				text-decoration: none;
 
+			}
+			&:hover{
+				background: $yellow;
+				transition: 0.2s;	
+			}
+		}
+		& span{
+			color: $gray4;
+		}
+	}
+	& h3{
+		font-size: 2.4rem;
+		font-weight: 600;
+		margin: 0 0 20px 0;
+	}
+	& > p{
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: #333;
+		margin-bottom: 20px;
+	}
+	&__meta{
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.3rem;
+		font-weight: 500;
+		&-data{
+			& a{
+				position: relative;
+				color: #000;
+				font-size: 1.3rem;
+				margin-right: 10px;
+				&::before{
+					content: '';
+					position: absolute;
+					background: #000;
+					width: 4px;
+					height: 4px;
+					top: 50%;
+					right: -13px;
+					margin-top: -2px;
+					border-radius: 50%;
+				}
+			}
+			& span{
+				padding-left: 10px;
+			}
+		}
+		&-like{
+			& i{
+				font-size: 1.6rem;
+				padding: 0px 5px;
+			}
+		}
+	}
+}
+.help{
+	display: inline-flex;
+	justify-content: space-between;
+	width: 200px;
+	&__item{
+		position: relative;
+
+		&:nth-child(1n+2)::before{
+			background: $yellow;
+			content: '';
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			top: 5px;
+			left: -17px;
+		}
+	}
+}
+.logo{
+	width: 274px;
+}
+.banner{
+	position: relative;
+	&__text{
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		margin-top: -20px;
+		font-size: 1.5rem;
+		font-family: $font_Montserrat;
+		font-weight: 600;
+		color: #000;
+		& span{
+			line-height: 3rem;
+			font-size: 2rem;
+			font-weight: 700;
+		}
+	}
+}
+.info{
+	display: inline-flex;
+	width: 274px;
+	justify-content: space-between;
+
+	&__item{
+		text-align: center;
+	}
+	&__link{
+		color: #000;
+		line-height: 4.5rem;
+		background: $gray2;
+		width: 4.5rem;
+		height: 4.5rem;
+
+		display: block;
+		border-radius: 30%;
+		transition: 1s;
+		& i{
+			font-size: 1.5rem;
+		}
+		
+		&:hover{
+			background: $yellow;
+			transition: 1s;
+			color: #fff;
+		}
+	}
+}
+.menu{
+	display: inline-flex;
+	justify-content: space-between;
+
+	&__item{
+		text-align: center;
+		position: relative;
+		&::before{
+			font-family: FontAwesome;
+			content: '\f107';
+			width: 10px;
+			height: 10px;
+			line-height: 10px;
+			position: absolute;
+			top: 5px;
+			right: -10px;
+		}
+		& ul{
+			display: none;
+		}
+		&:hover ul{
+			display: block;
+		}
+
+		&_active span > a,
+		&:hover > a{
+			color: $yellow;
+			transition: 0.5s;
+		}
+		&_active::before,
+		&:hover::before{
+			color: $yellow;
+			transition: 0.5s;
+		}		
+	}
+	&__link{
+		font-family: $font_Montserrat;
+		font-size: 1.6rem;
+		font-weight: 500;
+		display: block;
+		height: 100%;
+		width: 100%;
+		color: #000;
+		text-decoration: none;
+		padding: 0 20px;
+		&:hover{
+			color: $yellow;
+			transition: 0.5s;
+		}
+	}
+	&__submenu{
+		position: absolute;
+	}	
+}
+.submenu{
+	border: 1px solid #000;
+	// margin-top: -10px;
+	&__item{
+		min-width: 135px;
+		box-sizing: border-box;
+		padding: 5px 30px;
+		text-align: left;
+	}
+	&__link{
+		text-decoration: none;
+		font-size: 1.5rem;
+		font-family: $font_Montserrat;
+	}
+}
+.link{
+	text-decoration: none;
+	color: $white;
+	font-family: $font_Montserrat;
+	font-weight: 500;
+	font-size: 1.5rem;
+
+	&:hover{
+		color: $yellow;
+		transition: 0.2s;
+	}
+}
+.wrap{
+	margin: 0 auto;
+	@include _xxl{
+		width: 1200px;
+	}
+	@include _xl{
+		width: 1140px;
+	}
+	@include _lg{
+		width: 960px;
+	}
+	@include _md{
+		width: 720px;
+	}
+	@include _sm{
+
+	}
+}
+.title{
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+.author{
+	display: block !important;
+	width: 275px;
+	&__wrapimg{
+		width: 100%;
+		// background: #a00;
+		margin-bottom: 10px;
+		&-img{
+			display: block;
+			margin: 0 auto;
+			padding: 10px;
+			border-radius: 50%;
+			// background: #0f0;
+			border: 1px solid $gray;
+		}
+	}
+	&__title{
+		text-align: center;
+		& h4{
+			margin-bottom: 10px;
+		}
+		& a{
+			font-size: 1.8rem;
+			font-weight: 600;
+			color: #000;
+			
+			&:hover{
+				text-shadow: 0px 0px 4px #ddd;
+			}
+		}
+		& p{
+			font-size: 1.5rem;
+			color: #333;
+			font-weight: 500;
+			margin-bottom: 30px;
+			line-height: 1.5;
+		}
+	}
+	&__ditalics{
+		font-size: 1.5rem;
+		text-align: center;
+		color: #333;
+		font-weight: 500;
+		line-height: 1.5;
+		& p{
+			margin-bottom: 30px;
+		}
+	}
+	&__social{
+		width: 235px;
+	}
+	&__view{
+		background: $gray2;
+		color: #333;
+		padding: 10px;
+		border-radius: 10px;
+		&:hover{
+			color: #333;
+			background: $yellow;
+		}
+	}
+}
 html{
 	font-size: $font_base;
+	font-family: $font_Montserrat;
+}
+body{
+	background: $white;
 }
 .header{
 	margin-bottom: 20px;
@@ -165,20 +481,6 @@ html{
 			align-items: center;
 			padding: 20px 0 0 0;
 		}
-		&__social{
-			
-			& a{
-				color: #000;
-				line-height: 4.5rem;
-				background: $gray2;
-				width: 4.5rem;
-				height: 4.5rem;
-
-				& i{
-					font-size: 1.5rem;
-				}
-			}
-		}
 	}
 }
 .main{
@@ -187,6 +489,7 @@ html{
 		&-wrap{
 			display: flex;
 			justify-content: space-between;
+			padding: 80px 15px;
 		}
 		&-little{
 			&-item{
@@ -231,189 +534,65 @@ html{
 		&-hero{
 
 		}
-		&__comment{
+		&-comment{
 
 		}
 	}
-}
-.comment{
-	flex-grow: 1;
-	&__top{
-		display: flex;
-		font-family: $font_Montserrat;
-		padding: 5px;
-		font-size: 1.6rem;
-		align-items: center;
-		& h3{
-			background: $yellow-b;
-			padding: 10px 30px;
-			box-sizing: border-box;
-			border-radius: 10px;
-			margin-right: 40px;
+	&__second{
+		&-wrap{
+			padding: 80px 15px;
 		}
-		& span{
-			color: $gray4;
-		}
-	}
-}
-.help{
-	display: inline-flex;
-	justify-content: space-between;
-	width: 200px;
-	&__item{
-		position: relative;
+		&-content{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			height: 635px;
+			width: 440px;
+			&-item{
+				display: flex;
+				min-height: 166px;
+				margin: 15px 0;
+			}
+			&-comment{
+				display: flex;
+				flex-wrap: wrap;
+				width: 265px;
+				padding: 0 25px;
+				margin-top: 0px !important;
+				& h6{
+					padding: 4px 15px;
+					margin-right: 15px;
+					font-weight: 500;
+					color: #222;
+					& a:hover{
+						color: #fff;
+						background: $yellow;
+						transition: 0.2s;
+					}
+				}
+				& p{
+					font-size: 1.5rem;
+				}
+				& h3{
+					font-size: 1.8rem;
+				}
 
-		&:nth-child(1n+2)::before{
-			background: $yellow;
-			content: '';
-			position: absolute;
-			width: 4px;
-			height: 4px;
-			border-radius: 50%;
-			top: 5px;
-			left: -17px;
+			}
+		}
+	}
+	&__third{
+		&-content{
+			display: flex;
+			&-item{
+				display: flex;
+				flex-wrap: wrap;
+				// justify-content: space-around;
+			}
+			&-subitem{
+				padding: 0 15px;
+			}
 		}
 	}
 }
-.logo{
-	width: 274px;
-}
-.banner{
-	position: relative;
-	&__text{
-		position: absolute;
-		top: 50%;
-		left: 30px;
-		margin-top: -20px;
-		font-size: 1.5rem;
-		font-family: $font_Montserrat;
-		font-weight: 600;
-		color: #000;
-		& span{
-			line-height: 3rem;
-			font-size: 2rem;
-			font-weight: 700;
-		}
-	}
-}
-.info{
-	display: inline-flex;
-	width: 274px;
-	justify-content: space-between;
 
-	&__item{
-		text-align: center;
-	}
-	&__link{
-		display: block;
-		height: 100%;
-		width: 100%;
-		border-radius: 30%;
-		background: $gray;
-		transition: 1s;
-
-		&:hover{
-			background: $yellow;
-			transition: 1s;
-		}
-	}
-}
-.menu{
-	display: inline-flex;
-	justify-content: space-between;
-
-	&__item{
-		text-align: center;
-		position: relative;
-		&::before{
-			font-family: FontAwesome;
-			content: '\f107';
-			width: 10px;
-			height: 10px;
-			line-height: 10px;
-			position: absolute;
-			top: 5px;
-			right: -10px;
-		}
-		& ul{
-			display: none;
-		}
-		&:hover ul{
-			display: block;
-		}
-
-		&_active span > a,
-		&:hover > a{
-			color: $yellow;
-			transition: 0.5s;
-		}
-		&_active::before,
-		&:hover::before{
-			color: $yellow;
-			transition: 0.5s;
-		}		
-	}
-	&__link{
-		font-family: $font_Montserrat;
-		font-size: 1.6rem;
-		font-weight: 500;
-		display: block;
-		height: 100%;
-		width: 100%;
-		color: #000;
-		text-decoration: none;
-		padding: 0 20px;
-		&:hover{
-			color: $yellow;
-			transition: 0.5s;
-		}
-	}
-	&__submenu{
-		position: absolute;
-	}	
-}
-.submenu{
-	border: 1px solid #000;
-	// margin-top: -10px;
-	&__item{
-		min-width: 135px;
-		box-sizing: border-box;
-		padding: 5px 30px;
-		text-align: left;
-	}
-	&__link{
-		text-decoration: none;
-		font-size: 1.5rem;
-		font-family: $font_Montserrat;
-	}
-}
-.link{
-	text-decoration: none;
-	color: $white;
-	font-family: $font_Montserrat;
-	font-weight: 500;
-	font-size: 1.5rem;
-
-	&:hover{
-		color: $yellow;
-		transition: 0.2s;
-	}
-}
-.wrap{
-	margin: 0 auto;
-	@include _xxl{
-		width: 1200px;
-	}
-	@include _xl{
-		width: 1140px;
-	}
-	@include _lg{
-		width: 960px;
-	}
-	@include _md{
-		width: 720px;
-	}
-	@include _sm{
-
-	}
-}
